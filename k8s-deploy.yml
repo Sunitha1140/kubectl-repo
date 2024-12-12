@@ -1,17 +1,17 @@
 ---
-apiVesion: v1
+apiVesion: apps/v1
 kind: Deployment
 metadata:
-  name: my-aru
+  name: my-app
 spec:
   replicas: 3
   selector: 
     matchLabels:
-      app: ay-aru
+      app: ay-app
   template:
     metadata:
       labels:
-        app: my-aru
+        app: my-app
     spec:
       containers:
       - name: cont-1
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: devops
+  name: flm
 spec:
   type: NodePort
   selector:
-    app: my-aru
+    app: my-app
   ports:
     - port: 8080
       targetPort: 80
