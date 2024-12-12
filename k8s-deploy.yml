@@ -1,11 +1,11 @@
-
+---
 apiVesion: v1
 kind: Deployment
 metadata:
   name: my-aru
 spec:
   replicas: 3
-  selectos: 
+  selector: 
     matchLabels:
       app: ay-aru
   template:
@@ -25,7 +25,7 @@ kind: Service
 metadata:
   name: devops
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: my-aru
   ports:
